@@ -2,40 +2,48 @@
 
 ## Task 1 - Web Scraping
 
-- Scraped 100 quotes from https://quotes.toscrape.com
+### Objective
+Scrape quotes and authors from https://quotes.toscrape.com.
+
+### Features
+- Scraped all 10 pages
+- Collected 100 quotes
 - Extracted quote text
 - Extracted author names
-- Saved data into quotes.csv
+- Saved the data into quotes.csv
 
-## Task 2 - Exploratory Data Analysis
+## Task 2 - Exploratory Data Analysis (EDA)
 
-- Loaded CSV using Pandas
+### Analysis Performed
+- Displayed first five records
 - Checked dataset shape
+- Checked column names
 - Checked missing values
-- Found Top 10 Authors
-- Found duplicate quotes
-- Calculated longest quote
-- Calculated shortest quote
+- Counted quotes by author
+- Displayed Top 10 authors
+- Checked duplicate quotes
+- Found longest quote
+- Found shortest quote
 - Calculated average quote length
-- Created Bar Chart
-- Created Pie Chart
-- Created Histogram
+
+### Charts Generated
+- Bar Chart
+- Pie Chart
+- Histogram
 
 ## Technologies Used
-
 - Python
 - Requests
 - BeautifulSoup4
 - Pandas
 - Matplotlib
 
-## Output Files
-
+## Files
+- main.py
+- eda.py
 - quotes.csv
-- Top10Authors.png
-- piechart.png
-- Histogram.png
+- requirements.txt
+- README.md
 
 ## Author
-
 Sanika Fulari
