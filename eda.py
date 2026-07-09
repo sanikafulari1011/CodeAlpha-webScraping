@@ -1,0 +1,55 @@
+# Import Libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+# Read the csv file
+df = pd.read_csv("quotes.csv")
+# Display First Five Records
+print(df.head())
+# Show Dataset Shape
+print("\nshape of dataset:")
+print(df.shape)
+print("\n Column Names:")
+print(df.columns)
+print("\nDataset Information:")
+df.info()
+print("\nMissing Value:")
+print(df.isnull().sum())
+print("\nQuotes by Author:")
+print(df["Author"].value_counts())
+# Count Quotes by Author
+print("____Top 10 Authors____")
+top10 = df["Author"].value_counts().head(10)
+print(top10)
+print("**Duplicate Quotes**:")
+duplicates = df.duplicated().sum()
+print(duplicates)
+df["Length"] = df["Quote"].str.len()
+print("\nLongest Quotes :")
+print(df.loc[df["Length"].idxmax()])
+print("\nShortest Queat:")
+print(df.loc[df["Length"].idxmin()])
+print("\nAverage Quote Length:")
+print(df["Length"].mean())
+# Draw Bar Chart
+top10.plot(kind="bar")
+plt.title("top 10 Authors")
+plt.xticks(rotation=45)
+plt.xlabel("Author")
+plt.ylabel("Number of Quotes")
+plt.savefig("Top10Authors.png")
+plt.show()
+plt.figure(figsize=(8, 8))
+top10.plot(kind = "pie", autopct ="%1.1f%%")
+plt.ylabel("")
+plt.title("Top 10 Authors Distributioon")
+plt.savefig("Piechart.png")
+plt.show()
+
+#HISTOGRAM*****
+plt.figure(figsize=(8, 5))
+plt.hist(df["Length"], bins=10)
+plt.title("Quote Length Distribution")
+plt.xlabel("Quotes Length")
+plt.ylabel("Frequency")
+plt.savefig("Histogram.png")
+plt.show()
